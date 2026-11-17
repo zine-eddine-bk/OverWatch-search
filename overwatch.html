@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overwatch</title>
+    <link rel="stylesheet" href="overwatch.css">
+</head>
+<body>
+    <header>
+        <h1>Overwatch Search</h1>
+        <div id="searchbox">
+            <input id="searchinput" placeholder="Enter a Hero name">
+            <button id="searchbutton" onclick="search()">🔍</button>
+            <img id="resulticonimg" hidden>
+            <h4 id="searchoutput"></h4>
+        </div>
+    </header>
+    <main>
+        <div id="herocard" hidden>
+            <img id="resultwideimg">
+         <div id="heroinfodiv">
+            <h1 id="heroname"></h1>
+            <p id="heroage"></p>
+            <p id="herorole"></p>
+            <p id="herosubrole"></p>
+            <p id="herodescription"></p>
+            <p id="herobirthday"></p>
+            <p id="herolocat"></p>
+         </div>
+        </div>
+    </main>
+    
+    <script src="overwatch.js"></script>
+</body>
+</html>

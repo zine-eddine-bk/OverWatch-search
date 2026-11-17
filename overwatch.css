@@ -1,0 +1,170 @@
+:root{
+    --bg:#12151C;
+    --surface:#1E232F;
+    --accent:#F06414;
+    --accent2:#3B82F6;
+    --text:#F8FAFC;
+    --text2:#94A3B8;
+}
+[hidden]{
+    display:none !important;
+}
+*{
+    box-sizing:border-box;
+}
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Segoe UI", Arial, sans-serif;
+}
+/*-----*search*------*/
+header{
+    padding:24px 20px 16px;
+    text-align:center;
+}
+header h1{
+    margin:0 0 16px;
+    font-size:2rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+#searchbox{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+#searchinput{
+    width:260px;
+    padding:10px 14px;
+    font-size:1rem;
+    color:var(--text);
+    background:var(--surface);
+    border:2px solid var(--accent2);
+    border-radius:8px;
+    outline:none;
+}
+#searchinput::placeholder{
+    color:var(--text2);
+}
+#searchinput:focus{
+    border-color:var(--accent);
+}
+#searchbutton{
+    padding:10px 14px;
+    font-size:1rem;
+    color:var(--text);
+    background:var(--accent);
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+#searchbutton:hover{
+    filter:brightness(1.15);
+}
+#resulticonimg{
+    width:44px;
+    height:44px;
+    object-fit:cover;
+    border:2px solid var(--accent2);
+    border-radius:50%;
+}
+#searchoutput{
+    width:100%;
+    margin:0;
+    color:var(--accent);
+}
+/* ---------- hero card ---------- */
+main{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 20px 40px;
+}
+#herocard{
+    position:relative;
+    overflow:hidden;
+    min-height:320px;
+    background:var(--surface);
+    border:1px solid var(--accent2);
+    border-radius:14px;
+}
+#resultwideimg{
+    display:block;
+    width:100%;
+    max-width:100%;
+}
+#heroinfodiv{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:42%;
+    padding:24px;
+    overflow-y:auto;
+    display:flex;
+    flex-wrap:wrap;
+    align-content:center;
+    gap:8px;
+    background:rgba(18,21,28,0.55);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-right:2px solid var(--accent2);
+}
+#heroinfodiv p{
+    margin:0;
+}
+#heroname{
+    order:1;
+    width:100%;
+    margin:0;
+    font-size:2.4rem;
+    text-transform:uppercase;
+}
+
+#herorole,#herosubrole{
+    padding:4px 12px;
+    font-size:0.85rem;
+    font-weight:600;
+    text-transform:uppercase;
+    border-radius:20px;
+}
+#herorole{
+    order:2;
+    background:var(--accent);
+    color:var(--text);
+}
+#herosubrole{
+    order:3;
+    border:1px solid var(--accent2);
+    color:var(--accent2);
+}
+#heroage,#herobirthday,#herolocat{
+    width:100%;
+    color:var(--text2);
+    font-size:0.95rem;
+}
+#heroage{ order:4; }
+#herobirthday{ order:5; }
+#herolocat{ order:6; }
+#herodescription{
+    order:7;
+    width:100%;
+    margin-top:8px;
+    line-height:1.5;
+    font-size:0.95rem;
+    color:var(--text);
+}
+/*----for phones----*/
+@media (max-width:700px){
+    #heroinfodiv{
+        position:static;
+        width:100%;
+        border-right:none;
+        border-top:2px solid var(--accent2);
+        background:var(--surface);
+        backdrop-filter:none;
+        -webkit-backdrop-filter:none;
+    }
+}
