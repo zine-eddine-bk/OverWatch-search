@@ -20,6 +20,7 @@ body{
 }
 /*-----*search*------*/
 header{
+    position: relative;
     padding:24px 20px 16px;
     text-align:center;
 }
@@ -29,7 +30,7 @@ header h1{
     letter-spacing:2px;
     text-transform:uppercase;
 }
-#searchbox{
+#searchbox,#statssearchbox{
     display:flex;
     justify-content:center;
     align-items:center;
@@ -52,7 +53,7 @@ header h1{
 #searchinput:focus{
     border-color:var(--accent);
 }
-#searchbutton{
+#searchbutton,#getallstatsbutt{
     padding:10px 14px;
     font-size:1rem;
     color:var(--text);
@@ -61,7 +62,7 @@ header h1{
     border-radius:8px;
     cursor:pointer;
 }
-#searchbutton:hover{
+#searchbutton:hover,#getallstatsbutt:hover{
     filter:brightness(1.15);
 }
 #resulticonimg{
@@ -156,6 +157,85 @@ main{
     font-size:0.95rem;
     color:var(--text);
 }
+/* --------stats page------- */
+#statssearchbox select{
+    padding:10px 14px;
+    font-size:1rem;
+    color:var(--text);
+    background:var(--surface);
+    border:2px solid var(--accent2);
+    border-radius:8px;
+    outline:none;
+    cursor:pointer;
+}
+#statssearchbox select:focus{
+    border-color:var(--accent);
+}
+select option{
+    background:var(--surface);
+    color:var(--text);
+}
+#statsoutput{
+    width:100%;
+    max-width:900px;
+    max-height:60vh;
+    margin:10px auto 0;
+    padding:16px;
+    overflow:auto;
+    text-align:left;
+    font-size:0.85rem;
+    line-height:1.5;
+    color:var(--text2);
+    background:var(--surface);
+    border:1px solid var(--accent2);
+    border-radius:10px;
+}
+#statsoutput:empty{
+    display:none;
+}
+
+/* ------menu-------- */
+#menubutton{
+    position:absolute;
+    top:16px;
+    right:16px;
+    width:40px;
+    height:40px;
+    font-size:1.4rem;
+    color:var(--text);
+    background:var(--surface);
+    border:1px solid var(--accent2);
+    border-radius:8px;
+    cursor:pointer;
+}
+#menubutton:hover{
+    border-color:var(--accent);
+}
+#menupanel{
+    position:absolute;
+    top:60px;
+    right:16px;
+    z-index:10;
+    min-width:170px;
+    padding:6px;
+    text-align:left;
+    background:var(--surface);
+    border:1px solid var(--accent2);
+    border-radius:10px;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+}
+#menupanel a{
+    display:block;
+    padding:10px 12px;
+    font-size:0.95rem;
+    color:var(--text);
+    text-decoration:none;
+    border-radius:6px;
+}
+#menupanel a:hover{
+    background:var(--bg);
+    color:var(--accent);
+}
 /*----for phones----*/
 @media (max-width:700px){
     #heroinfodiv{
@@ -166,5 +246,10 @@ main{
         background:var(--surface);
         backdrop-filter:none;
         -webkit-backdrop-filter:none;
+    }
+}
+@media (max-width:700px){
+    header{
+        padding-top:64px;
     }
 }

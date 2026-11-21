@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="overwatch.css">
+</head>
+<body>
+    <header>
+        <button id="menubutton" onclick="togglemenu()">⋮</button>
+        <div id="menupanel" hidden>
+            <a href="overwatch.html">Hero Search</a>
+            <a href="overwatchstats.html">Hero Stats</a>
+        </div>
+        <h1>Overwatch Stats</h1>
+        <div id="statssearchbox">
+            <select id="platformselect">
+                <option value="pc">PC</option>
+                <option value="console">Console</option>
+            </select>
+            <select id="gamemodeselect">
+                <option value="competitive">Competitive</option>
+                <option value="quickplay">QuickPlay</option>
+            </select>
+            <select id="regionselect">
+                <option value="europe">Europe</option>
+                <option value="americas">Americas</option>
+                <option value="asia">Asia</option>
+            </select><br>
+            <button id="getallstatsbutt" onclick="getAllHeroStats()">Show Stats</button>
+            <pre id="statsoutput"></pre>
+        </div>
+    </header>
+    
+    <script src="overwatchstats.js"></script>
+</body>
+</html>

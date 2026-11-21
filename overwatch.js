@@ -1,3 +1,5 @@
+const menubutton=document.getElementById("menubutton");
+const menupanel=document.getElementById("menupanel");
 const input=document.getElementById("searchinput");
 const output=document.getElementById("searchoutput");
 const heroicon=document.getElementById("resulticonimg");
@@ -12,6 +14,7 @@ const outputbirthday=document.getElementById("herobirthday");
 const outputlocat=document.getElementById("herolocat");
 let data=[];
 let herodata={};
+let herostats=[];
 
 async function fetchAllHeroesDataOnline(){
     try{
@@ -27,6 +30,7 @@ async function fetchAllHeroesDataOnline(){
         console.error(error);
     }
 }
+
 
 async function fetchHeroData(herokey){
     herodata={};
@@ -119,4 +123,13 @@ input.addEventListener("keydown", event =>{
     if (event.key==="Enter") search();
 })
 
+function togglemenu(){
+    menupanel.hidden=!menupanel.hidden;
+}
+
+document.addEventListener("click", event=>{
+    if(event.target!=menubutton && !menupanel.contains(event.target))menupanel.hidden=true;
+})
+
 fetchAllHeroesDataOnline();
+fetchAllheroesStats();
