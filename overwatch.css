@@ -236,6 +236,71 @@ select option{
     background:var(--bg);
     color:var(--accent);
 }
+
+/* ----------stats table ------- */
+#statstable{
+    width:100%;
+    max-width:900px;
+    margin:10px auto 40px;
+    border-collapse:separate;
+    border-spacing:0 6px;
+}
+#statstable th{
+    padding:8px 12px;
+    text-align:left;
+    font-size:0.8rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:var(--text2);
+}
+#statstable td{
+    padding:8px 12px;
+    background:var(--surface);
+    border-top:1px solid transparent;
+    border-bottom:1px solid transparent;
+}
+#statstable td:first-child{
+    border-left:3px solid var(--accent2);
+    border-radius:10px 0 0 10px;
+}
+#statstable td:last-child{
+    border-radius:0 10px 10px 0;
+}
+#statstable tbody tr:hover td{
+    background:#262d3d;
+    border-top-color:var(--accent2);
+    border-bottom-color:var(--accent2);
+}
+.herocell{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:600;
+}
+.herocell img{
+    width:36px;
+    height:36px;
+    object-fit:cover;
+    border:2px solid var(--accent2);
+    border-radius:50%;
+}
+#statstable td span{
+    font-size:0.9rem;
+}
+.bar{
+    height:6px;
+    margin-top:4px;
+    background:var(--bg);
+    border-radius:3px;
+    overflow:hidden;
+}
+.bar div{
+    height:100%;
+    border-radius:3px;
+}
+.fillpick{ background:var(--accent); }
+.fillwin{ background:var(--accent2); }
+.fillban{ background:var(--text2); }
 /*----for phones----*/
 @media (max-width:700px){
     #heroinfodiv{

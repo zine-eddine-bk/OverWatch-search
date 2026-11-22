@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stats</title>
     <link rel="stylesheet" href="overwatch.css">
+    <link rel="icon" type="webp" href="image\icon.webp">
 </head>
 <body>
     <header>
@@ -32,7 +33,19 @@
             <pre id="statsoutput"></pre>
         </div>
     </header>
-    
+        <main>
+        <table id="statstable" hidden>
+            <thead>
+                <tr>
+                    <th>Hero</th>
+                    <th>Pick rate %</th>
+                    <th>Win rate %</th>
+                    <th>Ban rate %</th>
+                </tr>
+            </thead>
+            <tbody id="statsbody"></tbody>
+        </table>
+    </main>
     <script src="overwatchstats.js"></script>
 </body>
 </html>
