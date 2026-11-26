@@ -43,11 +43,10 @@ async function fetchHeroIcons(){
     }
 }
 
-fetchHeroIcons();
-
 async function getAllHeroStats(){
     statstable.hidden=true;
     statsoutput.textContent="Loading...";
+    await fetchHeroIcons();
     await fetchAllheroesStats(platformselect.value,gamemodeselect.value,regionselect.value);
     if(herostats.length<1){
         statsoutput.textContent="Could not load stats , try again !";
@@ -62,7 +61,7 @@ function togglemenu(){
 }
 
 document.addEventListener("click", event=>{
-    if(event.target!=menubutton && !menupanel.contains(event.target))menupanel.hidden=true;
+    if(event.target!=menubutton && !menupanel.contains(event.target)) menupanel.hidden=true;
 })
 
 function createcell(value, colorclass){
@@ -103,4 +102,50 @@ function showstats(){
         statsbody.appendChild(row);
     });
     statstable.hidden=false;
+    arrangtable("descending","Win rate")
+    //const tablelength=statstable.rows.length;
+    //console.log(`length : ${tablelength}`);
+    //let i=30;
+    //console.log(`row [${i}] : ${statstable.rows[i]}`)
 }
+
+function getvalue(row,line){
+    return parseFloat(row.cells[line].textContent) || 0;
+}
+
+function swaprows(a,b){
+    const newtr = document.createElement("tr");
+    a.replaceWith(newtr);
+    b.replaceWith(a);
+    newtr.replaceWith(b);
+}
+
+function arrangtable(type,tableLine){
+    statstable.querySelectorAll("th").forEach(x=>{
+        if(x.textContent.trim()!==`${tableLine} %`) delete x.dataset.order;
+    })
+    const line=[...statstable.rows[0].cells].findIndex(x=>x.textContent.trim()===`${tableLine} %`);
+    if (line<1) return;
+    switch (type){
+        case "ascending":
+            for(let i=1;i<statstable.rows.length;i++){
+                for(let j=i;j<statstable.rows.length;j++){
+                    if(getvalue(statstable.rows[j],line)<getvalue(statstable.rows[i],line)){
+                       swaprows(statstable.rows[i],statstable.rows[j]);
+                    }
+                }
+            }
+            break;
+        case "descending":
+           for(let i=1;i<statstable.rows.length;i++){
+                for(let j=i;j<statstable.rows.length;j++){
+                    if(getvalue(statstable.rows[j],line)>getvalue(statstable.rows[i],line)){
+                       swaprows(statstable.rows[i],statstable.rows[j]);
+                    }
+                }
+            }
+            break;
+    }
+
+}
+

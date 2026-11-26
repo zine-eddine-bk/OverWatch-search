@@ -38,9 +38,9 @@
             <thead>
                 <tr>
                     <th>Hero</th>
-                    <th>Pick rate %</th>
-                    <th>Win rate %</th>
-                    <th>Ban rate %</th>
+                    <th class="sortable" onclick="this.dataset.order = this.dataset.order==='descending' ? 'ascending' : 'descending'; arrangtable(this.dataset.order,'Pick rate')">Pick rate %</th>
+                    <th class="sortable" onclick="this.dataset.order = this.dataset.order==='descending' ? 'ascending' : 'descending'; arrangtable(this.dataset.order,'Win rate')">Win rate %</th>
+                    <th class="sortable" onclick="this.dataset.order = this.dataset.order==='descending' ? 'ascending' : 'descending'; arrangtable(this.dataset.order,'Ban rate')">Ban rate %</th>
                 </tr>
             </thead>
             <tbody id="statsbody"></tbody>

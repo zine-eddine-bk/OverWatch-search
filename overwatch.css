@@ -301,6 +301,22 @@ select option{
 .fillpick{ background:var(--accent); }
 .fillwin{ background:var(--accent2); }
 .fillban{ background:var(--text2); }
+/*-----sort---*/
+#statstable th.sortable{
+    cursor:pointer;
+    user-select:none;
+}
+#statstable th.sortable:hover{
+    color:var(--accent);
+}
+#statstable th[data-order="descending"]::after{
+    content:" ▼";
+    color:var(--accent);
+}
+#statstable th[data-order="ascending"]::after{
+    content:" ▲";
+    color:var(--accent);
+}
 /*----for phones----*/
 @media (max-width:700px){
     #heroinfodiv{
